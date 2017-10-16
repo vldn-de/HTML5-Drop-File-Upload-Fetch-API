@@ -20,21 +20,6 @@
 <body class="demo-droppable">
     <p>Drag files here or click to upload</p>
   <script>
-  function upload() {
-      var input = document.querySelector('#file');
-      var object = new FormData();
-      if (input.files[0] !== undefined) {
-        var suffix = input.value.split('.').pop();
-        object.append('file', input.files[0]);
-        object.append('suffix', suffix);
-        fetch('upload.php', {
-          method: 'POST',
-          body: object
-        }).then(function (data) {
-          if (data.status === 200) alert('Upload Success!');
-        });
-      }
-    }
     (function (window) {
       function triggerCallback(e, callback) {
         if (!callback || typeof callback !== 'function') {
